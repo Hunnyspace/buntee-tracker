@@ -13,11 +13,9 @@ import Summary from './components/Summary';
 import Navbar from './components/Navbar';
 import { User, UserRole } from './types';
 
-// Replace with your actual Firebase config in production
+// Use environment variable if available, otherwise fallback to the hardcoded key for local dev
 const firebaseConfig = {
-  // Use process.env.API_KEY directly for Firebase as well
- const firebaseConfig = {
-  apiKey: "AIzaSyB57Vp2oTCHXGd-E4QPX9FecjzA1Pwke24",
+  apiKey: process.env.API_KEY || "AIzaSyB57Vp2oTCHXGd-E4QPX9FecjzA1Pwke24",
   authDomain: "buntee-tracker.firebaseapp.com",
   projectId: "buntee-tracker",
   storageBucket: "buntee-tracker.firebasestorage.app",
@@ -27,6 +25,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+
 // Initialize compat firebase for the auth module specifically to resolve import errors
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
