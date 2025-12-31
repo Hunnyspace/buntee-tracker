@@ -20,13 +20,19 @@ const Navbar: React.FC<NavbarProps> = ({ user }) => {
   return (
     <nav className="bg-[#5D4037] text-white shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-4">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-[#D2B48C] rounded-full flex items-center justify-center text-[#5D4037] font-bold text-xl">B</div>
-          <div>
-            <h1 className="text-xl font-bold leading-none uppercase">BUNTEE</h1>
-            <p className="text-xs text-[#D2B48C]">Muska Bun Portal</p>
-          </div>
-        </Link>
+        <Link to="/" className="flex items-center gap-3">
+  {/* Replace the 'B' circle with your image logo */}
+  <img 
+    src="/Bunteelogo.png" 
+    alt="Buntee Logo" 
+    className="w-10 h-10 object-contain rounded-md" 
+  />
+  
+  <div>
+    <h1 className="text-xl font-bold leading-none uppercase">BUNTEE</h1>
+    <p className="text-xs text-[#D2B48C]">Muska Bun Portal</p>
+  </div>
+</Link>
         
         <div className="flex items-center gap-6 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 justify-center">
           <Link to="/" className="hover:text-[#D2B48C] transition-colors font-medium">Dashboard</Link>
